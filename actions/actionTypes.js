@@ -1,0 +1,3 @@
+export const FETCH_ARTS = 'FETCH_ARTS';
+export const FETCH_SUCCEEDED = 'FETCH_SUCCEEDED';
+export const FETCH_FAILED = 'FETCH_FAILED';
