@@ -31,8 +31,8 @@ export default class ArtComponent extends Component {
         console.log(arts);
 
         return (
-            <View style={{ flex: 1 }}>
-                <View style={{ flexDirection: 'row' }}>
+            <View style={{ flex: 1, backgroundColor: 'white' }}>
+                <View style={{ flexDirection: 'row', height: 80 }}>
                     <View style={{ flex: 8, justifyContent: 'center' }}>
                         <TextInput style={{
                             margin: 15,
@@ -65,13 +65,20 @@ export default class ArtComponent extends Component {
                         </TouchableOpacity>
                     </View>
                 </View>
-                <View style={{ flex: 7 }}>
+                <View style={{
+                    flex: 1,
+                    alignItems: 'center'
+                }}>
                     <FlatList
                         data={arts}
-                        keyExtractor={(item) => item.id}
-                        render={({ item, index }) => {
-                            <ArtListItem {...item}></ArtListItem>
+                        style={{flex: 1}}
+                        numColumns={2}
+                        renderItem={(item) => {
+                            return (
+                                <ArtListItem {...item}></ArtListItem>
+                            );
                         }}
+                        keyExtractor={(item) => item.id}
                     />
                 </View>
             </View>
