@@ -25,7 +25,6 @@ export default class ArtComponent extends Component {
 
     render() {
 
-
         const { arts } = this.props.data;
 
         console.log(arts);
@@ -35,7 +34,7 @@ export default class ArtComponent extends Component {
                 <View style={{ flexDirection: 'row', height: 80 }}>
                     <View style={{ flex: 8, justifyContent: 'center' }}>
                         <TextInput style={{
-                            margin: 15,
+                            marginHorizontal: 15,
                             paddingLeft: 15,
                             paddingVertical: 10,
                             borderColor: 'cornflowerblue',
@@ -55,7 +54,7 @@ export default class ArtComponent extends Component {
                             justifyContent: 'center',
                             alignItems: 'center',
                         }}
-                            onPress={() => { this.props.onFetchArt() }}>
+                            onPress={() => { }}>
                             <Image
                                 source={require('../icon/search.png')}
                                 style={{
@@ -71,11 +70,11 @@ export default class ArtComponent extends Component {
                 }}>
                     <FlatList
                         data={arts}
-                        style={{flex: 1}}
+                        style={{ flex: 1 }}
                         numColumns={2}
                         renderItem={(item) => {
                             return (
-                                <ArtListItem {...item}></ArtListItem>
+                                <ArtListItem {...item} navigation={this.props.navigation} ></ArtListItem>
                             );
                         }}
                         keyExtractor={(item) => item.id}

@@ -58,6 +58,10 @@ export default class ArtListItem extends Component {
         return displayTime;
     }
 
+    _openDetail() {
+        this.props.navigation.navigate("DetailScreen", this.props.item);
+    }
+
 
     render() {
 
@@ -66,7 +70,7 @@ export default class ArtListItem extends Component {
         mDisplayTime = this._getDisplayTime(time);
 
         return (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => { this._openDetail() }}>
                 <View
                     style={{
                         height: 270,
@@ -82,10 +86,7 @@ export default class ArtListItem extends Component {
                         <Image
                             source={{ uri: thumb }}
                             style={{
-                                backgroundColor: 'red',
                                 position: 'absolute',
-                                borderTopLeftRadius: 10,
-                                borderTopRightRadius: 10,
                                 top: 0,
                                 bottom: 0,
                                 right: 0,

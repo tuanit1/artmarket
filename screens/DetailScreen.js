@@ -14,12 +14,16 @@ import {
     View,
 } from 'react-native';
 
-import ArtContainer from '../containers/ArtContainter';
-
-export default class MainScreen extends Component {
+export default class DetailScreen extends Component {
     render() {
         return (
-            <ArtContainer navigation={this.props.navigation}></ArtContainer>
+            <View style={{
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}>
+                <Text>{JSON.stringify(this.props.route.params)}</Text>
+            </View>
         );
     }
 }
