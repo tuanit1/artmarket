@@ -62,7 +62,7 @@ export default function DrawerView(sprops) {
         <Drawer.Navigator
             drawerContent={(props) => CustomDrawerContent(props, sprops)}
         >
-            <Drawer.Screen name="MainScreen" component={MainStack} options={{ title: 'Art Market' }} />
+            <Drawer.Screen name="MainStack" component={MainStack} options={{ title: 'Art Market' }} />
             <Drawer.Screen name="ProfileScreen" component={ProfileScreen} options={{ title: 'Your profile' }} />
         </Drawer.Navigator>
     );

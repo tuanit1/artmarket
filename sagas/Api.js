@@ -1,4 +1,4 @@
-const server_url = "http://192.168.1.13/artmarket/api.php";
+const server_url = "http://172.20.10.13/artmarket/api.php";
 
 function* postAPI(params) {
     const requestOptions = {

@@ -14,7 +14,7 @@ import {
     View,
 } from 'react-native';
 
-import ArtContainer from '../containers/ArtContainter';
+import ArtContainer from '../containers/ArtContainer';
 
 export default class MainScreen extends Component {
     render() {
