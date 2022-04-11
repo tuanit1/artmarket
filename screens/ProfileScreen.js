@@ -14,17 +14,13 @@ import {
     View,
 } from 'react-native';
 
+import MyProfileContainer from '../containers/MyProfileContainer'
+
 export default class ProfileScreen extends Component {
     render() {
         return (
-            <View style={{
-                backgroundColor: 'yellow',
-                flex: 1,
-                justifyContent: 'center',
-                alignItems: 'center'
-            }}>
-                <Text>Profile Screen</Text>
-            </View>
+            <MyProfileContainer navigation={this.props.navigation}></MyProfileContainer>
         );
     }
 }
+

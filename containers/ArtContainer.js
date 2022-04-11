@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ArtComponent from '../components/ArtComponent';
 import React, { Component } from 'react';
-import { fetchArtAction } from '../actions';
+import { fetchArtAction, searchAction, sortAction } from '../actions';
 
 class ArtContainer extends Component {
     constructor(props) {
@@ -25,29 +25,16 @@ export default connect(
         return {
             onFetchArt: () => {
                 dispatch(fetchArtAction());
+            },
+
+            onSearch: (text) => {
+                dispatch(searchAction(text));
+            },
+
+            onSort: (sortType) => {
+                dispatch(sortAction(sortType));
             }
         }
     }
 
 )(ArtContainer);
-
-
-
-
-
-// const mapStateToProps = (state) => {
-
-//     return {
-//         data: state.art
-//     }
-// }
-
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         onFetchArt: () => {
-//             dispatch(fetchArtAction());
-//         }
-//     }
-// }
-// const ArtContainer = connect(mapStateToProps, mapDispatchToProps)(ArtComponent);
-// export default ArtContainer;

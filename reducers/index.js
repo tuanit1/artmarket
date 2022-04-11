@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import artReducers from './artReducers';
+import ArtReducers from './ArtReducers';
+import UserReducer from './UserReducer';
 
 const allReducers = combineReducers({
-    art: artReducers,
+    art: ArtReducers,
+    user: UserReducer
 });
 
 export default allReducers;

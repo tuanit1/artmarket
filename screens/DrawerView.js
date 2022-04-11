@@ -14,6 +14,8 @@ import auth from '@react-native-firebase/auth';
 import MainScreen from './MainScreen'
 import ProfileScreen from './ProfileScreen'
 import DetailScreen from './DetailScreen'
+import UpdateArtScreen from './UpdateArtScreen';
+import UpdateUserScreen from './UpdateUserScreen'
 
 function CustomDrawerContent(props, parent) {
     return (
@@ -56,6 +58,29 @@ const MainStack = () => {
     );
 }
 
+const ProfileStack = () => {
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+
+            <Stack.Screen
+                name="ProfileScreen"
+                component={ProfileScreen}
+            />
+
+            <Stack.Screen
+                name="UpdateArtScreen"
+                component={UpdateArtScreen}
+            />
+
+            <Stack.Screen
+                name="UpdateUserScreen"
+                component={UpdateUserScreen}
+            />
+
+        </Stack.Navigator>
+    );
+}
+
 export default function DrawerView(sprops) {
 
     return (
@@ -63,7 +88,7 @@ export default function DrawerView(sprops) {
             drawerContent={(props) => CustomDrawerContent(props, sprops)}
         >
             <Drawer.Screen name="MainStack" component={MainStack} options={{ title: 'Art Market' }} />
-            <Drawer.Screen name="ProfileScreen" component={ProfileScreen} options={{ title: 'Your profile' }} />
+            <Drawer.Screen name="ProfileScreen" component={ProfileStack} options={{ title: 'Your profile' }} />
         </Drawer.Navigator>
     );
 }

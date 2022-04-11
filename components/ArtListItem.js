@@ -59,13 +59,29 @@ export default class ArtListItem extends Component {
     }
 
     _openDetail() {
-        this.props.navigation.navigate("DetailScreen", this.props.item);
+        
+        switch (this.props.itemMode){
+            case 'show':
+                this.props.navigation.navigate("DetailScreen", this.props.item);
+                break;
+            case 'edit':
+
+                params = {
+                    item: this.props.item,
+                    mode: 'edit',
+                    parent: this.props.parent
+                }
+
+                this.props.navigation.navigate("UpdateArtScreen", params);
+                break;
+        }
+
     }
 
 
     render() {
 
-        const { thumb, name, time, price } = this.props.item;
+        const { thumb, name, time, price, ownername } = this.props.item;
 
         mDisplayTime = this._getDisplayTime(time);
 
@@ -73,7 +89,7 @@ export default class ArtListItem extends Component {
             <TouchableOpacity onPress={() => { this._openDetail() }}>
                 <View
                     style={{
-                        height: 270,
+                        height: 300,
                         width: 170,
                         margin: 5,
                         flexDirection: 'column',
@@ -110,7 +126,7 @@ export default class ArtListItem extends Component {
                     </View>
 
                     <View style={{
-                        height: 70,
+                        height: 90,
                         flexDirection: 'column',
                         borderColor: 'cornflowerblue',
                         borderWidth: 1,
@@ -129,6 +145,12 @@ export default class ArtListItem extends Component {
                             marginBottom: 5,
                             fontSize: 15
                         }}>{mDisplayTime}</Text>
+
+                        <Text style={{
+                            marginBottom: 5,
+                            fontSize: 13,
+                            fontStyle: 'italic'
+                        }}>by {ownername}</Text>
                     </View>
 
                 </View>
