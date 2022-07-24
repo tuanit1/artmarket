@@ -67,7 +67,7 @@ export default class DetailScreen extends Component {
                         fontSize: 22,
                         textAlign: 'center',
                         marginBottom: 15
-                    }}>Price: ${price}</Text>
+                    }}>Priceee: ${price}</Text>
                 </View>
 
 
